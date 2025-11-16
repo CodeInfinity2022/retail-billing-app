@@ -1,0 +1,68 @@
+###############################
+#        BACKEND (JAVA)       #
+###############################
+
+# Maven / Gradle build directories
+target/
+build/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Spring Boot packaged files
+*.jar
+*.war
+
+# Ignore IntelliJ / Eclipse / VS Code project files
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+
+###############################
+#       FRONTEND (REACT)      #
+###############################
+
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# VS Code settings
+.vscode/
+
+
+###############################
+#         GENERAL             #
+###############################
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.cache
+
+# Backup files
+*.bak
+*.swp
