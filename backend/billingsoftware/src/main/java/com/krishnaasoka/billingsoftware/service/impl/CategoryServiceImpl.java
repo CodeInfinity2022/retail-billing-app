@@ -39,6 +39,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     }
 
+    // to convert the entity to response - helper method
     private CategoryResponse convertToResponse(CategoryEntity newCategory) {
         return CategoryResponse.builder()
                 .categoryId(newCategory.getCategoryId())
@@ -57,6 +58,13 @@ public class CategoryServiceImpl implements CategoryService {
                 .stream()
                 .map(categoryEntity -> convertToResponse(categoryEntity))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void delete(String categoryId) {
+        CategoryEntity existingCategory = categoryRepository.findByCategoryId(categoryId)
+                .orElseThrow(() -> new RuntimeException("Category not found: " + categoryId));
+        categoryRepository.delete(existingCategory);
     }
 
 }
