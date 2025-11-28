@@ -1,6 +1,9 @@
 package com.krishnaasoka.billingsoftware.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +27,11 @@ public class CategoryController {
     @ResponseStatus(HttpStatus.CREATED)
     public CategoryResponse addCategory(@RequestBody CategoryRequest request) {
         return categoryService.add(request);
+    }
 
+    @GetMapping
+    public List<CategoryResponse> fetchCategories() {
+        return categoryService.read();
     }
 
 }
